@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col size-sm="6">
+                <div class="register">
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="register-form">
+                        <ion-list>
+                            
+                            <div class="form-group">
+                                <ion-list-header class="ion-no-padding">First Name</ion-list-header>
+                                <ion-item>
+                                    <ion-input  clearInput="true" type="text" formControlName="first_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && formFields.first_name.errors }"></ion-input>
+                                </ion-item>
+                                <div *ngIf="submitted && !!formFields.email.errors" class="register-error">
+                                    <div *ngIf="!!formFields.email.errors.required && validationRequired">First Name is required</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <ion-list-header class="ion-no-padding">Last Name</ion-list-header>
+                                <ion-item class="form-group">
+                                    <ion-input clearInput="true" type="text" formControlName="last_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && formFields.last_name.errors }"></ion-input>
+                                </ion-item>
+                                <div *ngIf="submitted && !!formFields.email.errors" class="register-error">
+                                    <div *ngIf="!!formFields.email.errors.required && validationRequired">Last Name is required</div>
+                                </div>
+                            </div>
+            
+            
+                            <div>
+                                <ion-list-header for="email" class="ion-no-padding">Email Address</ion-list-header>
+                                <ion-item class="form-group">
+                                    <ion-input clearInput="true" type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && formFields.email.errors }"></ion-input>
+                                </ion-item>
+                                <div *ngIf="submitted && !!formFields.email.errors" class="register-error">
+                                    <div *ngIf="!!formFields.email.errors.required && validationRequired">Email is required</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <ion-list-header for="password" class="ion-no-padding">Password</ion-list-header>
+                                <ion-item class="form-group">
+                                    <ion-input clearInput="true" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && formFields.password.errors }"></ion-input>
+                                </ion-item>
+                                <div *ngIf="submitted &&!!formFields.password.errors" class="register-error">
+                                    <div *ngIf="!!formFields.password.errors.required && validationRequired">Password is required</div>
+                                    <div *ngIf="!!formFields.password.errors.minlength && validationRequired">Password must be at least 6 characters</div>
+                                </div>
+                            </div>
+            
+                            <div>
+                                <ion-list-header class="ion-no-padding">Phone Number</ion-list-header>
+                                <ion-item class="form-group">
+                                    <ion-input clearInput="true" type="tel" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && formFields.phone.errors }"></ion-input>
+                                </ion-item>
+                                <div *ngIf="submitted &&!!formFields.phone.errors" class="register-error">
+                                    <div *ngIf="!!formFields.phone.errors.required && validationRequired">Phone number is required</div>
+                                </div>
+                            </div>
+            
+                        </ion-list>
+                
+                        <section class="form-group">
+                            <ion-button type="submit" expand="block" color="secondary">Register</ion-button>
+                        </section>
+                        <section class="form-group ion-padding">
+                            <ion-button fill="clear" expand="block" color="dark" routerLink="/login" class="btn btn-link">Cancel</ion-button>
+                        </section>
+                    </div>
+                    </form>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

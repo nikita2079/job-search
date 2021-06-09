@@ -1,0 +1,105 @@
+.userCv {
+    background-color: #f73f5d;
+    border-radius: 8px;
+    padding-top: 10px;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    &-title {
+        h2 {
+            margin: 0px 0px 11px 0px;
+            color: #fff;
+        }
+    }
+    &-error {
+        p {
+            color: #f84d3c;
+        }
+    }
+    &-form {
+        padding-bottom: 5px;
+        padding: 0px 10px 10px 10px;
+        background-color: #fff;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+}
+
+ion-item {
+    --inner-padding-end: 0px;
+    --padding-start: 0px;
+}
+
+ion-grid {
+    height: 100%;
+}
+ion-row {
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.cv {
+    color: #000;
+    background-color: #fff;
+    border-radius: 8px;
+    &-container {
+        padding: 10px;
+        box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    }
+    &-name {
+        text-transform: uppercase;
+        text-align: center;
+    }
+    &-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &--image {
+            width: 30%;
+            img {
+                border-radius: 50%;
+            }
+        }
+        &--summary {
+            margin: 0px 0px 10px 0px;
+        }
+        &--month {
+            font-size: 35px;
+            margin: 0px;
+        }
+        &--period {
+            // background-color: #ced4e4;
+            text-align: center;
+            padding: 5px;
+            border-radius: 8px;
+        }
+    }
+    &-address {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &--details {
+            width: 70%;
+        }
+        p {
+            margin: 5px 0px;
+        }
+        &--text {
+            background-color: #ced4e4;
+            padding: 5px;
+            border-radius: 8px;
+            // color: #fff;
+        }
+    }
+    &-job {
+        display: flex;
+        justify-content: space-between;
+    }
+    &-delete {
+        padding: 10px;
+    }
+}
+
+ion-button {
+    margin: 5px 0px 0px 0px;
+}

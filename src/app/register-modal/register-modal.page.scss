@@ -1,0 +1,39 @@
+.modal {
+    &-title {
+        // margin: 0px;
+        font-family: 'Yeseva One', cursive;
+        font-size: 2rem;
+        text-align: center;
+        // transition: all 3s ease;
+    }
+    &-error {
+        color: #f84d3c;
+    }
+    &-form {
+        margin: 0px 10px;
+        padding-bottom: 5px;
+    }
+    &-button {
+        margin: 0px 10px;;
+    }
+    &-text {
+        h4 {
+            margin: 0px;
+        }
+    }
+}
+
+ion-item{
+    --inner-padding-end: 0px;
+    --padding-start:0px
+}
+
+ion-grid{
+    height: 100%;
+}
+ion-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}

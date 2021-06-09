@@ -1,0 +1,142 @@
+* {
+    outline: none;
+}
+
+.jobs {
+    margin: 0px 10px;
+    &-svg {
+        display: flex;
+        justify-content: center;
+        svg {
+            height: 250px;
+        }
+    }
+}
+
+.joblisting {
+    padding: 15px 0px 0px 0px;
+    &-toolbar {
+        margin: 10px;
+    }
+
+    &-paper {
+        box-shadow: 0 10px 0 -5px #904dcb;
+    }
+
+    &-footer {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 5px 0px;
+    }
+
+    &-background {
+        &--sub {
+            background-color: #832ac0;
+            border-radius: 8px;
+            padding: 0px 0px 20px 0px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        &--title {
+            padding-top: 10px;
+            margin: 0px 0px 0px 0px;
+            color: #fff;
+            font-family: 'Yeseva One', cursive;
+            font-size: 2rem;
+        }
+
+        &--subtitle {
+            margin: 0px 0px 0px 15px;
+            color: #eee;
+        }
+
+        &--button {
+            display: flex;
+            justify-content: flex-end;
+            button {
+                text-transform: uppercase;
+                color: #f86a58;
+                background-color: #fff;
+                font-size: 1rem;
+                margin-top: 1rem;
+            }
+        }
+    }
+
+    &-head {
+        margin: 0px;
+    }
+    &-header {
+        margin: 0px 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-title {
+        margin: 0px;
+        font-family: 'Yeseva One', cursive;
+        font-size: 3rem;
+        color: #fff;
+    }
+
+    &-card {
+        box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+        border-radius: 8px;
+        margin: 5px 0px;
+        &--title {
+            margin: 0px 15px 20px 15px;
+            font-family: 'Yeseva One', cursive;
+            font-size: 2rem;
+            color: #fff;
+        }
+        &--border {
+            border-radius: 8px;
+            background-color: #3b486b;
+        }
+        &--location {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            padding: 0px 0px 5px 15px;
+        }
+        &--description {
+            margin: 20px 15px 0px 15px;
+            color: #fff;
+        }
+        &--background {
+            padding: 20px 0px 20px 0px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        &--link {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            margin: 0px 15px;
+        }
+    }
+}
+
+.image-mask {
+    background-size: cover;
+    background-position: top;
+    text-align: center;
+    font: 700 12vw 'Yeseva One', cursive;
+    @media (min-width: 768px) {
+        font: 700 5vw 'Yeseva One', cursive;
+    }
+}
+
+ion-toolbar,
+ion-header {
+    --min-height: 5px;
+}
+
+// COLORS
+// #3b486b
+// #010920
+// #832AC0
+// #1873FF
+// #F73F5D

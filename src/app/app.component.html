@@ -1,0 +1,45 @@
+<ion-app>
+  <ion-menu contentId="my-content" side="start">
+
+    <ion-content color="tertiary">
+          <!-- <div class="image-mask">TEXTILE WORKERS</div> -->
+      <div class="menu">
+        <ion-list class="menu-content ion-no-padding">
+          <ion-menu-toggle>
+            <ion-item color="tertiary" lines="none" routerLink="/tabs/job-listing">
+              <ion-icon name="home" slot="start"></ion-icon>
+              <ion-label>Home</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item color="tertiary" lines="none" routerLink="tabs/profile/{{loggedInUser}}">
+              <ion-icon name="contact" slot="start"></ion-icon>
+              <ion-label>Profile</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item color="tertiary" lines="none" routerLink="/jobs-applied">
+              <ion-icon name="checkbox-outline" slot="start"></ion-icon>
+              <ion-label>Jobs Applied</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item color="tertiary" lines="none" (click)="onLogout()" button>
+              <ion-icon name="exit" slot="start"></ion-icon>
+              <ion-label>Logout</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+    </div>
+  <!-- </div> -->
+</ion-content>
+
+
+    
+  </ion-menu>
+
+  <ion-router-outlet id="my-content"></ion-router-outlet>
+  
+  </ion-app>
+
+

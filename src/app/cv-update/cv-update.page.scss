@@ -1,0 +1,41 @@
+.cvUpdate {
+    background-color: #252d42;
+    border-radius: 8px;
+    padding-top: 10px;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    margin-bottom: 35px;
+    &-title {
+        h2 {
+            margin: 0px 0px 11px 0px;
+            color: #fff;
+        }
+    }
+    &-error {
+        p {
+            color: #f84d3c;
+        }
+    }
+    &-form {
+        padding-bottom: 5px;
+        padding: 0px 10px 10px 10px;
+        background-color: #fff;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+}
+
+ion-item {
+    --inner-padding-end: 0px;
+    --padding-start: 0px;
+}
+
+ion-grid {
+    height: 100%;
+    // background-color: #282D46;
+}
+ion-row {
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    height: 100%;
+}

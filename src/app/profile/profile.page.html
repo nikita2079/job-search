@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+        <div class="profile-title">
+            <ion-title class="ion-no-padding">Profile</ion-title>
+        </div>
+        <ion-buttons slot="primary">
+            <ion-button *ngIf="hasCvLocal !== null" (click)="onUpdate()" color="primary">
+                Update
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary">
+    <ion-grid>
+        <div class="profile-background">
+            <ion-row>
+                <ion-col size-sm="6" offset-sm="3" class="ion-no-padding">
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="12" size-sm="6" offset-sm="3">
+                    <div class="profile-background--sub profile-paper">
+                        <div class="">
+                            <p class="profile-background--title" *ngIf="userData">
+                                {{ userData.first_name}} {{ userData.last_name}}
+                            </p>
+                            <p class="profile-background--subtitle" *ngIf="userData">
+                                {{ userData.email }}
+                            </p>
+                            <p class="profile-background--subtitle" *ngIf="userData">
+                                {{ userData.phone }}
+                            </p>
+                            <!-- <div class="profile-background--button">
+                <ion-button class="ion-padding" color="warning" *ngIf="userData">{{ userData.phone }}</ion-button>
+                </div> -->
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+    </ion-grid>
+
+    <div class="profile-cv">
+        <app-cv-user *ngIf="hasCvLocal !== null" [hasCV]="hasCvLocal" [userId]="loggedInUser" (cvDelete)="deleteCv()"
+            [sector]="sector" [sub_sector]="subsector" [province]="province" [city]="city">
+        </app-cv-user>
+    </div>
+
+    <div class="profile-button">
+        <form [formGroup]="createUserCv" #formDirective="ngForm" (ngSubmit)="onSubmit(formDirective)">
+            <ion-input class="form-group" formControlName="active" required type="hidden"></ion-input>
+            <ion-button *ngIf="hasCvLocal === null" expand="block" class="form-group" type="submit" color="warning">
+                Create CV
+            </ion-button>
+        </form>
+    </div>
+</ion-content>

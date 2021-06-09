@@ -1,0 +1,42 @@
+.image-mask {
+    background-size: cover;
+    background-image: url('https://images.unsplash.com/photo-1500241770736-a3f62bbc8717?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80');
+    background-position: center;
+    background-clip: text;
+    text-align: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font: 700 25vw 'Yeseva One', cursive;
+}
+
+.bookmark {
+    border-radius: 10px;
+    padding-bottom: 30px;
+    margin-bottom: 35px;
+    background-color: #fff;
+    &-header {
+        display: flex;
+        justify-content: center;
+        &--title {
+            color: #222428;
+        }
+    }
+    &-delete {
+        margin: 0 10px;
+    }
+}
+
+ion-toolbar,
+ion-header {
+    --min-height: 5px;
+}
+
+ion-grid {
+    height: 100%;
+}
+ion-row {
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    height: 100%;
+}

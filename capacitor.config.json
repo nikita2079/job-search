@@ -1,0 +1,6 @@
+{
+  "appId": "com.textitle.workers",
+  "appName": "text-workers-app",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

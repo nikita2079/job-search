@@ -1,0 +1,74 @@
+.profile {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px 10px 10px;
+    // box-shadow: 0px 7px 6px -5px #DFE1E5;
+    &-button {
+        margin: 0px 8px;
+    }
+    &-footer {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 5px 0px;
+    }
+    &-title {
+        padding: 0px 10px 0px 10px;
+    }
+    // &-cv {
+    //   margin-bottom: 38px;
+    // }
+
+    &-paper {
+        box-shadow:
+      /* The top layer shadow */
+      // 0 1px 1px rgba(0,0,0,0.15),
+      /* The second layer */ 0
+            10px 0 -5px #2e3451;
+        /* The second layer shadow */
+        // 0 10px 1px -4px rgba(0,0,0,0.15),
+        /* The third layer */
+        // 0 20px 0 -10px #c29ce2,
+        /* The third layer shadow */
+        // 0 20px 1px -9px rgba(0,0,0,0.15);
+    }
+
+    &-background {
+        // padding: 0px 0 25px 0;
+        // background: radial-gradient(circle, black 10%, transparent 10%),
+        // radial-gradient(circle, black 10%, white 10%) 50px 50px;
+        // background-size:14px 14px;
+
+        &--sub {
+            background-color: #f4f5f8;
+            // box-shadow: 0px 7px 6px -5px #632B94;
+            border-radius: 8px;
+            padding: 0px 0px 20px 0px;
+        }
+
+        &--title {
+            padding-top: 10px;
+            margin: 0px 0px 0px 15px;
+            color: #222428;
+            font-family: 'Yeseva One', cursive;
+            font-size: 2rem;
+        }
+
+        &--subtitle {
+            margin: 0px 0px 0px 15px;
+            color: #222428;
+        }
+
+        &--button {
+            display: flex;
+            justify-content: flex-start;
+            button {
+                text-transform: uppercase;
+                color: #f86a58;
+                background-color: #fff;
+                font-size: 1rem;
+                margin-top: 1rem;
+            }
+        }
+    }
+}

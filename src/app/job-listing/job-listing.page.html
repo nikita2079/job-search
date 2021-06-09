@@ -1,0 +1,113 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+        <div class="joblisting-toolbar">
+            <ion-searchbar
+                color="light"
+                (ionChange)="onSearch($event)"
+                class="ion-no-padding"
+            ></ion-searchbar>
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary" class="ion-no-padding">
+    <div class="jobs">
+
+        <div class="joblisting ion-text-center">
+            <p class="joblisting-head"><strong>This weeks's</strong></p>
+            <div class="image-mask">Jobs</div>
+        </div>
+        
+        <ion-grid class="ion-no-padding">
+            <ion-row>
+                <ion-col
+                    size="12"
+                    size-sm="8"
+                    offset-sm="2"
+                    class="ion-text-center ion-no-padding"
+                >
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid
+            *ngIf="!relevantjobs || relevantjobs.length <= 0"
+            class="ion-no-padding"
+        >
+            <ion-row>
+                <ion-col
+                    size="12"
+                    size-sm="8"
+                    offset-sm="2"
+                    class="ion-text-center"
+                >
+                    <p>There are no jobs right now, please come back later!</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid *ngIf="relevantjobs.length > 0" class="ion-no-padding">
+            <ion-row>
+                <ion-col
+                    size="12"
+                    size-sm="8"
+                    offset-sm="2"
+                    *ngFor="let job of listedLoadedjobs; let i=index"
+                    class="ion-no-padding"
+                >
+                    <div class="joblisting-card">
+                        <div class="joblisting-card--border">
+                            <div class="joblisting-card--background">
+                                <h2 class="joblisting-card--title">
+                                    {{ job.title }}
+                                </h2>
+                                <p class="joblisting-card--description">
+                                    {{job.summary}}
+                                </p>
+                            </div>
+                            <!-- [routerLink]="['/', 'job-detail', job.id]" -->
+                            <div class="joblisting-card--link">
+                                <ion-button
+                                    fill="clear"
+                                    color="light"
+                                    class="ion-no-padding"
+                                    (click)="onMore(job.id)"
+                                >
+                                    More
+                                </ion-button>
+                                <ion-button
+                                    *ngIf="bookmarkState.includes(job.id)"
+                                    fill="clear"
+                                    color="warning"
+                                    class="ion-no-padding"
+                                    (click)="onBookmark(job, i)"
+                                >
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </ion-button>
+                                <ion-button
+                                    *ngIf="!bookmarkState.includes(job.id)"
+                                    fill="clear"
+                                    color="light"
+                                    class="ion-no-padding"
+                                    (click)="onBookmark(job, i)"
+                                >
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </ion-button>
+                            </div>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-infinite-scroll
+            threshold="100px"
+            (ionInfinite)="doInfinite($event)"
+        >
+            <ion-infinite-scroll-content
+                loadingSpinner="lines"
+                loadingText="Loading more listings..."
+            >
+            </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </div>
+</ion-content>

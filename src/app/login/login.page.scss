@@ -1,0 +1,28 @@
+.auth {
+    &-error {
+        p {
+            color: #f84d3c;
+            margin: 0;
+        }
+    }
+}
+
+ion-grid {
+    height: 100%;
+}
+ion-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.image-mask {
+    background-size: cover;
+    background-color: #252d42;
+    background-position: center;
+    text-align: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

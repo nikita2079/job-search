@@ -1,0 +1,160 @@
+<ion-grid>
+    <!-- <ion-row>
+        <ion-col size-sm="6">
+            <div *ngIf="hasCV && sector" class="userCv">
+                <div class="userCv-title ion-text-center">
+                    <h2>Curriculum Vitae</h2>
+                </div>
+                <div class="userCv-form">
+                    <ion-list>
+                        <ion-list-header class="ion-no-padding"
+                            >job Sector</ion-list-header
+                        >
+
+                        <ion-item>
+                            <ion-label>{{ sector.name }}</ion-label>
+                        </ion-item>
+
+                        <ion-list-header class="ion-no-padding"
+                            >Sub Sector</ion-list-header
+                        >
+
+                        <ion-item>
+                            <ion-label>{{ sub_sector.name }}</ion-label>
+                        </ion-item>
+
+                        <ion-list-header class="ion-no-padding"
+                            >Province</ion-list-header
+                        >
+
+                        <ion-item>
+                            <ion-label>{{ province.name }}</ion-label>
+                        </ion-item>
+
+                        <ion-list-header class="ion-no-padding"
+                            >City</ion-list-header
+                        >
+
+                        <ion-item>
+                            <ion-label>{{ city.name }}</ion-label>
+                        </ion-item>
+
+                        <ion-list-header class="ion-no-padding"
+                            >Job Title</ion-list-header
+                        >
+
+                        <ion-item>
+                            <ion-label>{{ hasCV.job_title }}</ion-label>
+                        </ion-item>
+
+                        <ion-list-header class="ion-no-padding"
+                            >Comment</ion-list-header
+                        >
+
+                        <ion-item>
+                            <ion-textarea disabled="true" autoGrow="true"
+                                >{{ hasCV.comment }}</ion-textarea
+                            >
+                        </ion-item>
+
+                        <ion-list-header class="ion-no-padding"
+                            >Months Employed</ion-list-header
+                        >
+
+                        <ion-item>
+                            <ion-label>{{ hasCV.months_employed }}</ion-label>
+                        </ion-item>
+                    </ion-list>
+
+                    <section>
+                        <ion-button
+                            (click)="clickDelete()"
+                            expand="block"
+                            color="warning"
+                            >Delete CV</ion-button
+                        >
+                    </section>
+                </div>
+            </div>
+        </ion-col>
+    </ion-row> -->
+
+    <ion-row>
+        <ion-col size-sm="8">
+            <div *ngIf="hasCV && sector" class="userCv" class="cv">
+                <div class="cv-container">
+                    <div class="cv-name">
+                        <h4 class="cv-name">Curriculum Vitae</h4>
+                    </div>
+
+                    <div class="cv-address">
+                        <p class="cv-address--title">Job Sector</p>
+                        <div class="cv-address--details">
+                            <p class="cv-address--text">{{ sector.name }}</p>
+                        </div>
+                    </div>
+                    <div class="cv-address">
+                        <p class="cv-address--title">Sub Sector</p>
+                        <div class="cv-address--details">
+                            <p class="cv-address--text">
+                                {{ sub_sector.name }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cv-address">
+                        <p class="cv-address--title">Province</p>
+                        <div class="cv-address--details">
+                            <p class="cv-address--text">{{ province.name }}</p>
+                        </div>
+                    </div>
+                    <div class="cv-address">
+                        <p class="cv-address--title">City</p>
+                        <div class="cv-address--details">
+                            <p class="cv-address--text">{{ city.name }}</p>
+                        </div>
+                    </div>
+                    <div class="cv-address">
+                        <p class="cv-address--title">Job Title</p>
+                        <div class="cv-address--details">
+                            <p class="cv-address--text">
+                                {{ hasCV.job_title }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cv-address">
+                        <p class="cv-address--title">Comment</p>
+                        <div class="cv-address--details">
+                            <p class="cv-address--text">
+                                {{ hasCV.comment }} Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Odio, itaque! Nemo
+                                qui molestias quidem, molestiae nesciunt unde
+                                quia non, ullam iste totam nobis consequatur.
+                                Magnam nemo voluptate explicabo dicta tempora!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cv-details--period">
+                        <div class="cv-details--number">
+                            <h2 class="cv-details--month">
+                                {{ hasCV.months_employed }}
+                            </h2>
+                            <p class="cv-details--summary">
+                                Months employed
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cv-delete">
+                    <section>
+                        <ion-button
+                            (click)="clickDelete()"
+                            expand="block"
+                            color="warning"
+                            >Delete CV</ion-button
+                        >
+                    </section>
+                </div>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-grid>

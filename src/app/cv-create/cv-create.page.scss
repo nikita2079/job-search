@@ -1,0 +1,15 @@
+.createCv {
+    margin: 10px 10px 10px 10px;
+    border-radius: 8px;
+    padding-top: 10px;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    &-form {
+        margin: 0px 10px;
+        padding-bottom: 5px;
+    }
+}
+
+ion-item{
+    --inner-padding-end: 0px;
+    --padding-start:0px
+}

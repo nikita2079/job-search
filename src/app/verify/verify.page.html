@@ -1,0 +1,57 @@
+<ion-content> 
+    <ion-grid>
+        <ion-row>
+            <ion-col size-sm="3">
+                <div class="verify">
+                    <form [formGroup]="verificationForm" (ngSubmit)="onSubmit()">
+                    <div class="verify-form">
+                        <ion-list>
+                            
+                            <div class="form-group">
+                                <ion-list-header class="ion-no-padding">Email Address</ion-list-header>
+                                <ion-item>
+                                    <ion-input 
+                                        [value]="emailAddress" 
+                                        type="emailAddress" 
+                                        formControlName="email" 
+                                        class="form-control" 
+                                        [ngClass]="{ 'is-invalid': submitted && formFields.email.errors }"
+                                    ></ion-input>
+                                    <div *ngIf="submitted && !!formFields.email.errors" class="verify-error">
+                                        <div *ngIf="!!formFields.email.errors.required">Email Address is required</div>
+                                    </div>
+                                </ion-item>
+                            </div>
+                            
+                            <div>
+                                <ion-list-header class="ion-no-padding">Verification Code</ion-list-header>
+                                <ion-item class="form-group">
+                                    <ion-input 
+                                        type="text" 
+                                        formControlName="verification_code" 
+                                        class="form-control" 
+                                        [ngClass]="{ 'is-invalid': submitted && formFields.verification_code.errors }"
+                                    ></ion-input>
+                                    <!-- FIXME formfields issue  -->
+                                    <!-- TODO  -->
+                                    <div *ngIf="submitted &&!!formFields.verification_code.errors" class="verify-error">
+                                        <div *ngIf="!!formFields.verification_code.errors.required">Verification code is required</div>
+                                    </div>
+                                </ion-item>
+                            </div>
+            
+                        </ion-list>
+                
+                        <section class="form-group">
+                            <ion-button type="submit" expand="block" color="secondary">Verify</ion-button>
+                        </section>
+                        <section class="form-group ion-padding">
+                            <ion-button fill="clear" expand="block" color="dark" routerLink="/login" class="btn btn-link">Cancel</ion-button>
+                        </section>
+                    </div>
+                    </form>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

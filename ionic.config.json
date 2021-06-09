@@ -1,0 +1,7 @@
+{
+  "name": "textile-workers-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

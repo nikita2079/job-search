@@ -1,0 +1,38 @@
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col size-sm="3">
+                <div class="reset">
+                    <div class="ion-text-center reset-title">
+                        <h2>Reset</h2>
+                    </div>
+                    <form [formGroup]="resetForm" (ngSubmit)="onSubmit()">
+                    <div class="reset-form">
+                        <ion-list>
+                            
+                            <div class="form-group">
+                                <ion-list-header class="ion-no-padding">Email</ion-list-header>
+                                <ion-item>
+                                    <ion-input clearInput="true" type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && formFields.email.errors }"></ion-input>
+                                    <div *ngIf="submitted && !!formFields.email.errors" class="reset-error">
+                                        <div *ngIf="!!formFields.email.errors.required">Email is required</div>
+                                    </div>
+                                </ion-item>
+                            </div>
+                                            
+                        </ion-list>
+                
+                        <section class="form-group">
+                            <ion-button type="submit" expand="block" color="secondary">Reset Password</ion-button>
+                        </section>
+                        <section class="form-group ion-padding">
+                            <ion-button fill="clear" expand="block" color="dark" routerLink="/login" class="btn btn-link">Cancel</ion-button>
+                        </section>
+                    </div>
+                    </form>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+  

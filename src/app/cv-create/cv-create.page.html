@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button 
+          defaultHref="job-listing" 
+          text=""
+          (click)="onBackButton()" 
+          >
+        </ion-back-button>
+      </ion-buttons>
+      <ion-title>Create CV</ion-title>
+      <ion-buttons slot="primary">
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <div class="createCv">
+        <form [formGroup]="createCvForm" #formDirective="ngForm" (ngSubmit)="onSubmit(formDirective)">
+          <div class="createCv-form">
+              <ion-list>
+                  <!-- hidden form input that sets initial value of logged in user ID -->
+                  <ion-input class="form-group" [value]="loggedInUser" formControlName="user_id" required type="hidden"></ion-input>
+
+                  <ion-list-header class="ion-no-padding">job Sector</ion-list-header>
+                  <ion-select (ionChange)="onSectors($event)" placeholder="Select One" formControlName="sector_id">
+                      <ion-select-option *ngFor="let sector of sectors" [value]="sector.id">{{sector.name}}</ion-select-option>
+                  </ion-select>
+      
+                  <ion-list-header *ngIf="subSectors"  class="ion-no-padding">Sub Sector</ion-list-header>
+                  <ion-select *ngIf="subSectors" class="ion-no-padding" placeholder="Select One" formControlName="subsector_id">
+                      <ion-select-option *ngFor="let sector of subSectors" [value]="sector.id">{{sector.name}}</ion-select-option>
+                  </ion-select>
+      
+                  <ion-list-header class="ion-no-padding">Province</ion-list-header>
+                  <ion-select (ionChange)="onProvinces($event)" placeholder="Select One" formControlName="province_id">
+                      <ion-select-option *ngFor="let province of provinces" [value]="province.id">{{province.name}}</ion-select-option>
+                  </ion-select>
+      
+                  <ion-list-header *ngIf="cities"  class="ion-no-padding">City</ion-list-header>
+                  <ion-select *ngIf="cities" placeholder="Select One" formControlName="city_id">
+                      <ion-select-option  *ngFor="let city of cities" [value]="city.id">{{city.name}}</ion-select-option>
+                  </ion-select>
+      
+                  <ion-list-header class="ion-no-padding">Job Title</ion-list-header>
+      
+                  <ion-item class="form-group">
+                  <ion-input clearInput="true" formControlName="job_title" type="text" for="sector"></ion-input>
+                  </ion-item>
+      
+                  <ion-list-header class="ion-no-padding">Comment</ion-list-header>
+      
+                  <ion-item class="form-group">
+                  <ion-textarea autoGrow="true" clearInput="true" formControlName="comment" type="text" for="sector"></ion-textarea>
+                  </ion-item>
+      
+                  <ion-list-header class="ion-no-padding">Months Employed</ion-list-header>
+      
+                  <ion-item class="form-group">
+                  <ion-input clearInput="true" formControlName="months_employed" type="text" for="sector"></ion-input>
+                  </ion-item>
+              </ion-list>
+      
+              <section class="form-group">
+                  <ion-button type="submit" expand="block" color="secondary">Create Cv</ion-button>
+              </section>
+          </div>
+        </form>
+      </div>
+  </ion-content>
+  
